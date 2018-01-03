@@ -30,7 +30,22 @@ namespace EulerProject
                     break;
                 case 2:
                     Console.WriteLine("Problem 2: In the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.");
-                break;
+                    int sum2 = 2;
+                    int x1 = 1;
+                    int x2 = 2;
+                    int r = 0;
+                    while (r <= 4000000)
+                    {
+                        r = x1 + x2;
+                        x1 = x2;
+                        x2 = r;
+                        if (r % 2 == 0)
+                        {
+                            sum2 = sum2 + r;
+                        }
+                    }
+                        Console.WriteLine($"The sum of even terms is {sum2}");
+                        break;
                 default:
                     Console.WriteLine("You haven't solved that problem yet.");
                 break;                    
