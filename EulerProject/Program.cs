@@ -46,6 +46,9 @@ namespace EulerProject
                     }
                         Console.WriteLine($"The sum of even terms is {sum2}");
                         break;
+                case 3:
+                    Console.WriteLine("Problem 3: What is the largest prime factor of the number 600851475143 ?");
+                    break;
                 default:
                     Console.WriteLine("You haven't solved that problem yet.");
                 break;                    
