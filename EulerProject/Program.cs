@@ -48,6 +48,27 @@ namespace EulerProject
                         break;
                 case 3:
                     Console.WriteLine("Problem 3: What is the largest prime factor of the number 600851475143 ?");
+                    long problem_num = 600851475143;
+                    bool solved = false;
+                    long dividend = problem_num;
+                    int p3x;
+                    while (solved == false)
+                    {
+                        //find smallest prime factor
+                        p3x = 2;
+                        while (dividend % p3x != 0) { p3x = p3x + 1; }
+                        // if smallest prime factor == dividend then you have the largest prime factor
+                        if (p3x == dividend)
+                        {
+                            Console.WriteLine($"The largest prime factor is {dividend}");
+                            solved = true;
+                        }
+                        else
+                        {
+                            dividend = dividend / p3x;
+                        }
+                        // else the diviend / quotient becomes the new dividend
+                    }
                     break;
                 default:
                     Console.WriteLine("You haven't solved that problem yet.");
