@@ -70,11 +70,50 @@ namespace EulerProject
                         // else the diviend / quotient becomes the new dividend
                     }
                     break;
+                case 4:
+                    Console.WriteLine("Problem 4: Find the largest palindrome made from the product of two 3-digit numbers.");
+                    int p4FactorOne = 999;
+                    int p4FactorTwo = 999;
+                    int lf1 = 0;
+                    int lf2 = 0;
+                    int largest_palindrome = 10001;
+                    for (p4FactorOne = 999; p4FactorOne > 100; p4FactorOne--)
+                    {
+                        for (p4FactorTwo = 999; p4FactorTwo > 100; p4FactorTwo--)
+                        {
+                            //turn the product of p4FactorOne and p4FactorTwo into string                           
+                            // determine if palindrome by comparing string and reverse string
+                            // if palindrome is determined and higher than largest_palindrome then largwst palindrom is set to new palidrome
+                            string p4ProdString = (p4FactorOne * p4FactorTwo).ToString();
+                            char[] p4ProdArray = p4ProdString.ToCharArray();
+                            Array.Reverse(p4ProdArray);
+                            string p4ProdStringReversed = new string(p4ProdArray);
+                            if (p4ProdString == p4ProdStringReversed)
+                            {
+                                if ((p4FactorOne * p4FactorTwo) > largest_palindrome)
+                                {
+                                    largest_palindrome = (p4FactorOne * p4FactorTwo);
+                                    lf1 = p4FactorOne;
+                                    lf2 = p4FactorTwo;
+                                }
+                            }
+                        }
+                    }
+                    Console.WriteLine($"The largest palindrome number is {largest_palindrome} ({lf1} X {lf2})");
+
+                    break;
                 default:
                     Console.WriteLine("You haven't solved that problem yet.");
                 break;                    
             }
             Thread.Sleep(10000);
         }
+        public string Reversal(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+
     }
 }
