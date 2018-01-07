@@ -102,6 +102,22 @@ namespace EulerProject
                     Console.WriteLine($"The largest palindrome number is {largest_palindrome} ({lf1} X {lf2})");
 
                     break;
+                case 5:
+                    Console.WriteLine("Problem 5: What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?");
+                    int p5HigestDivisor = 20;
+                    int p5PSolution = (p5HigestDivisor * (p5HigestDivisor-1));
+
+                    while (p5PSolution % 2 != 0 || p5PSolution % 3 != 0 || p5PSolution % 4 != 0 || p5PSolution % 5 != 0 ||
+                             p5PSolution % 6 != 0 || p5PSolution % 7 != 0 || p5PSolution % 8 != 0 || p5PSolution % 9 != 0 ||
+                             p5PSolution % 10 != 0 || p5PSolution % 11 != 0 || p5PSolution % 12 != 0 || p5PSolution % 13 != 0 ||
+                             p5PSolution % 14 != 0 || p5PSolution % 15 != 0 || p5PSolution % 16 != 0 || p5PSolution % 17 != 0 ||
+                             p5PSolution % 18 != 0 || p5PSolution % 19 != 0 || p5PSolution % 20 != 0)
+                    {
+                        p5PSolution+= p5HigestDivisor * (p5HigestDivisor - 1);
+                    }
+                    Console.WriteLine($"The smallest number divisible by 1..20 is {p5PSolution}");
+                    break;
+ 
                 default:
                     Console.WriteLine("You haven't solved that problem yet.");
                 break;                    
